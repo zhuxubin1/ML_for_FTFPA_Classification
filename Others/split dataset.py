@@ -36,8 +36,8 @@ if __name__ == '__main__':
     diameter = ('5nm', '13nm', '60nm')
 
     root = "../Data/image_RF(imageJ)"
-    train_folder = "d:/process2/split/train"
-    test_folder = "d:/process2/split/test"
+    train_folder = "../Data/split/train"
+    test_folder = "../Data/split/test"
 
     folders = os.listdir(root)
     for folder in folders:
