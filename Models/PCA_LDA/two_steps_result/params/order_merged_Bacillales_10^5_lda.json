@@ -1,0 +1,9 @@
+{
+    "covariance_estimator": null,
+    "n_components": 2,
+    "priors": null,
+    "shrinkage": null,
+    "solver": "svd",
+    "store_covariance": false,
+    "tol": 0.0001
+}

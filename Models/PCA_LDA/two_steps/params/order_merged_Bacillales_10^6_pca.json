@@ -1,0 +1,18 @@
+{
+    "alpha": 1.0,
+    "coef0": 1,
+    "copy_X": true,
+    "degree": 3,
+    "eigen_solver": "auto",
+    "fit_inverse_transform": false,
+    "gamma": null,
+    "iterated_power": "auto",
+    "kernel": "linear",
+    "kernel_params": null,
+    "max_iter": null,
+    "n_components": 14,
+    "n_jobs": null,
+    "random_state": null,
+    "remove_zero_eig": false,
+    "tol": 0
+}

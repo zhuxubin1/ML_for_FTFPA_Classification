@@ -1,0 +1,20 @@
+{
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "entropy",
+    "max_depth": 2,
+    "max_features": 100,
+    "max_leaf_nodes": 3,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "n_estimators": 8,
+    "n_jobs": null,
+    "oob_score": true,
+    "random_state": 100,
+    "verbose": 0,
+    "warm_start": false
+}
