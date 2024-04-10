@@ -22,7 +22,7 @@ In this project, we tried to classify the threshold gray histogram of the FTFPA 
   * R version: 4.2.3
   * A list of some required R packages version:
     * readxl 1.4.3
-    * dplyr 1.0.10
+    * dplyr 1.1.4
     * stringi 1.7.8
     * ggplot2 3.3.6
     * ROCR 1.0.11
@@ -35,10 +35,11 @@ In this project, we tried to classify the threshold gray histogram of the FTFPA 
     * openxlsx 4.2.5.2
     * forcats 0.5.2
     * stringr 1.5.0
-    * purrr 0.3.4
+    * pheatmap 1.0.12
+    * purrr 1.0.2
     * readr 2.1.2
     * tidyr 1.2.1
-    * tibble 3.1.8
+    * tibble 3.2.1
   * Python version: 3.10
   * A list of some required Python library versions:
     * opencv-python~=4.8.1.78
