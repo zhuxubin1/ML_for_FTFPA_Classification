@@ -1,4 +1,4 @@
-# Machine Learning for Microbe Identification
+# Bacterial classification based on machine learning and FTFPA
 
 In this project, we tried to classify the threshold gray histogram of the FTFPA images and 9 microorganisms through machine learning methods (including the tandem dimensionality reduction model of PCA and LDA and the random forest model), so as to achieve effective identification of microorganisms in tasks such as binary classification, multi-classification and hierarchical classification.
 
