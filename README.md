@@ -56,8 +56,8 @@ In this project, we tried to classify the threshold gray histogram of the FTFPA 
 ### 1. Clone the repository.
 
 ```commandline
-git clone https://github.com/zhuxubin1/machine_learning_for_microbe_identification
-cd machine_learning_for_microbe_identification
+git clone https://github.com/zhuxubin1/ML_for_FTFPA_Classification
+cd ML_for_FTFPA_Classification
 ```
 
 ### 2. Run xx_train.py to train the model and generate the result, or run xx_generate_result.py to generate the result directly.
