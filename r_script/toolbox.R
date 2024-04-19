@@ -8,7 +8,7 @@
 
 load("RData/Universal_variable.RData")
 
-# Figure 1 ------------------------------
+# Figure 2 ------------------------------
 
 
 table_add_avg_sd <- function(data, data_type) {
@@ -42,7 +42,13 @@ table_add_avg_sd <- function(data, data_type) {
 
 
 AuNPs_size_histgram <- function(data, AuNPs_type, interval, color) {
-  
+  # This function is used to generate a particle size histogram of AuNPs.
+  # 
+  # Args:
+  #   data: Data table containing AuNPs particle size data.
+  #   AuNPs_type: Type of AuNPs, including AuNPs1, AuNPs2, and AuNPs3.
+  #   interval: The interval of the histogram.
+  #   color: Corresponding color.
   
   data_long <- data %>%  
     pivot_longer(  
@@ -84,7 +90,7 @@ AuNPs_size_histgram <- function(data, AuNPs_type, interval, color) {
           panel.grid = element_blank(),
           axis.title.y = element_text(size = 15),
           axis.text = element_text(size = 13))
-  ggsave(sprintf("plot/F1/F1_AuNPs_size_histgram_%s.png", AuNPs_type), p,
+  ggsave(sprintf("plot/F2/F2_AuNPs_size_histgram_%s.png", AuNPs_type), p,
          units = 'cm', width = 8, height = 8, dpi = 1200)
 }
 
@@ -113,7 +119,7 @@ AuNPs_wave_plot <- function(data, color, label, y_lim){
           axis.title = element_text(face = 'bold',size = 15),
           axis.text = element_text(face = 'bold', size = 13))
   
-  image_name <- sprintf("plot/F1/F1_curve_plot_%s_1.png", label)
+  image_name <- sprintf("plot/F2/F2_curve_plot_%s.png", label)
   ggsave(image_name, units = 'cm', width = 7, height = 9, dpi = 1200)
 }
 
@@ -144,13 +150,13 @@ AuNPs_zeta_plot <- function(data){
                        breaks = seq(-40, 0, by = 10),
                        expand = c(0, 0)) +
     geom_text(aes(label = Avg), vjust = c(4, 3.5, 2), size = 6)
-  ggsave("plot/F1/F1_Zeta_plot.png", p, units = 'cm',
+  ggsave("plot/F2/F2_Zeta_plot.png", p, units = 'cm',
          width = 8, height = 12, dpi = 1200)
 }
 
 
 
-# Figure 3 ------------------------------
+# Figure 4 ------------------------------
 
 
 Roc_curve <- function(ROC_1, ROC_3, d_color, s_color, s, c, abbr = ''){
@@ -223,7 +229,7 @@ Roc_curve <- function(ROC_1, ROC_3, d_color, s_color, s, c, abbr = ''){
                 aes(x = x, ymin = lower, ymax = upper),
                 fill = s_color, alpha = 0.5, inherit.aes = F)
   
-  image_name = sprintf("plot/F3/F3_ROC_%s_%s.png", s, c)
+  image_name = sprintf("plot/F4/F4_ROC_%s_%s.png", s, c)
   ggsave(filename = image_name , p1 , width = 4, height = 4,
          units = "in", dpi = 1200)
 }
@@ -292,7 +298,7 @@ AUROC_AUPR_errorbar <- function(df, plot_type, data_type) {
           axis.title.y = element_text(face = "bold", size = 20),
           legend.position = 'none')
   
-  plot_dir <- sprintf("plot/F3/F3_%s_%s.png", plot_type, data_type)
+  plot_dir <- sprintf("plot/F4/F4_%s_%s.png", plot_type, data_type)
   ggsave(plot_dir, units = 'in', width = 8, height = 5, dpi = 1200)
 }
 
@@ -332,13 +338,13 @@ F1_barplot <- function(df, s, c, abbr = '') {
                        expand = c(0, 0)) +
     scale_fill_manual(values = fill_color)
   
-  image_name <- sprintf("plot/F3/F3_Dichotomies_%s_%s.png", s, c)
+  image_name <- sprintf("plot/F4/F4_Dichotomies_%s_%s.png", s, c)
   ggsave(image_name, p, units = 'in', height = 4, width = 3.5, dpi = 1200)
 }
 
 
 
-# Figure 4 ------------------------------
+# Figure 5 ------------------------------
 
 
 F1_multi_barplot <- function(df, model_type) {
@@ -383,13 +389,13 @@ F1_multi_barplot <- function(df, model_type) {
           panel.background = element_blank(),
           axis.line = element_line(colour = "black"))
   
-  image_name <- sprintf("plot/F4/F4_f1_barplot_%s.png", model_type)
+  image_name <- sprintf("plot/F5/F5_f1_barplot_%s.png", model_type)
   ggsave(image_name, p, units = "in", height = 4, width = 6, dpi = 1200)
 }
 
 
 
-# Figure 5 ------------------------------
+# Figure 6 ------------------------------
 
 
 F1_Hierarchical_barplot <- function(data) {
@@ -434,7 +440,7 @@ F1_Hierarchical_barplot <- function(data) {
           panel.background = element_blank())
     
     
-  ggsave("plot/F5/F5_Hierarchical_barplot.png", p, units = "in",
+  ggsave("plot/F6/F6_Hierarchical_barplot.png", p, units = "in",
          height = 6, width = 10, dpi = 1200)
 }
 

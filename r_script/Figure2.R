@@ -1,5 +1,5 @@
-# Script name: Figure1.R
-# Purpose: Used to generate representational images required by Figure1.
+# Script name: Figure2.R
+# Purpose: Used to generate representational images required by Figure2.
 # Author: Zhu Xubin
 # Date Created: 2024-02-15
 
@@ -15,7 +15,7 @@ source("toolbox.R")
 
 # Import Data ----------------------
 
-load("RData/Figure1.RData")
+load("RData/Figure2.RData")
 
 # Generation of subplots ------------------------------
 
