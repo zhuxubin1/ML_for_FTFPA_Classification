@@ -448,6 +448,7 @@ F1_Hierarchical_barplot <- function(data) {
 
 # Figure S2 ------------------------------
 
+                        
 require(ggplot2)
 set_theme <- theme(
   text = element_text(face = "bold", family = 'sans'),
@@ -730,6 +731,7 @@ left_label <- function() {
   return (label_p)
 }
 
+                        
 
 # Figure S7-S8 ------------------------------
 
@@ -872,5 +874,3 @@ scatter_plot <- function(df, LDA, t, c) {
   imagename = sprintf("plot/FS7-8/FS7-8_%s_%s.png", t, c)
   ggsave(imagename, p, units = "in", height = 6, width = 7.5, dpi = 1200)
 }
-
-
