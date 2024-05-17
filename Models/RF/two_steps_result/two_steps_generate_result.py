@@ -78,8 +78,8 @@ if __name__ == "__main__":
         y_pred = pipeline.predict(X_test)
         confusionPainting(y_test, y_pred, labels, plt.cm.Reds, output=f"{IMAGE}/{IDENTIFIER}_{concentration}.png")
 
-        # # model metrics
-        # Accuracy, Recall, F1_score, Precision_score = model_metrics(y_test, y_pred)
-        # insert_into_table([concentration, Accuracy, Recall, F1_score, Precision_score],
-        #                   f"{TABLE}/{IDENTIFIER}_Accuracy.xlsx",
-        #                   column_names=["concentration", "Accuracy", "Recall", "F1", "Precision"])
+        # model metrics
+        Accuracy, Recall, F1_score, Precision_score = model_metrics(y_test, y_pred)
+        insert_into_table([concentration, Accuracy, Recall, F1_score, Precision_score],
+                          f"{TABLE}/{IDENTIFIER}_Accuracy.xlsx",
+                          column_names=["concentration", "Accuracy", "Recall", "F1", "Precision"])

@@ -38,9 +38,9 @@ if __name__ == "__main__":
         confusionPainting(y_pred, y_test, labels, plt.cm.Reds, rotation=45, text_size=40,
                           output=f"{IMAGE}/{IDENTIFIER}_{concentration}.png")
 
-        # # model metrics
-        # Accuracy, Recall, F1_score, Precision_score = model_metrics(y_test, y_pred)
-        # cv = StratifiedKFold(n_splits=30)
-        # scores = cross_val_score(model_rf, X_test, y_test, scoring='accuracy', n_jobs=10, cv=cv)
-        # data = [3, 3, concentration, Accuracy, Recall, F1_score, Precision_score] + list(scores)
-        # insert_into_table(data, f"{TABLE}/order_accuracy.xlsx")
+        # model metrics
+        Accuracy, Recall, F1_score, Precision_score = model_metrics(y_test, y_pred)
+        cv = StratifiedKFold(n_splits=30)
+        scores = cross_val_score(model_rf, X_test, y_test, scoring='accuracy', n_jobs=10, cv=cv)
+        data = [3, 3, concentration, Accuracy, Recall, F1_score, Precision_score] + list(scores)
+        insert_into_table(data, f"{TABLE}/order_accuracy.xlsx")

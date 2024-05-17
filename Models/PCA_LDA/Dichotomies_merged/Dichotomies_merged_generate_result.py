@@ -42,30 +42,30 @@ if __name__ == "__main__":
             confusionPainting(y_pred, y_test, labels, plt.cm.Reds, text_size=45, tick_fontsize=30, label_fontsize=36,
                               output=f"{IMAGE}/{IDENTIFIER}_{organism}_{concentration}.png")
 
-            # # model metrics
-            # Accuracy_score, Recall, F1_score, Precision_score = model_metrics(y_test, y_pred)
-            # y_probs = best_model.predict_proba(X_test)[:, 1]
-            # AUROC = roc_auc_score(y_test, y_probs)
-            # AUPR = average_precision_score(y_test, y_probs)
-            # data = [organism, 3, 3, concentration, AUROC, AUPR, Accuracy_score, Recall, F1_score, Precision_score]
-            # column_names = ["target", "number_of_pictures", "diameter", "concentration", "AUROC", "AUPR",
-            #                 "Accuracy_score", "Recall", "F1_score", "Precision_score"]
-            # insert_into_table(data, f"{TABLE}/{IDENTIFIER}_AUROC_AUPR.xlsx", column_names)
-            #
-            # # accuracy of cross validation
-            # cv = StratifiedKFold(n_splits=30)
-            # scores = cross_val_score(best_model, X_test, y_test, scoring='accuracy', n_jobs=-1, cv=cv,
-            #                          error_score='raise')
-            # data = [3, 3, concentration, Accuracy_score, Recall, F1_score, Precision_score] + list(scores)
-            # insert_into_table(data, f"{TABLE}/{IDENTIFIER}_{organism}_Accuracy.xlsx")
-            #
-            # # AUROC and AUPR of cross validation
-            # cv = StratifiedKFold(n_splits=30)
-            # auroc = list(cross_val_score(best_model, X_test, y_test, scoring='roc_auc', n_jobs=-1, cv=cv))
-            # aupr = list(cross_val_score(best_model, X_test, y_test, scoring='average_precision', n_jobs=-1, cv=cv))
-            # data_roc = [organism, 3, 3, concentration] + auroc
-            # data_pr = [organism, 3, 3, concentration] + aupr
-            # column_names = (["target", "number_of_pictures", "diameter", "concentration"] +
-            #                 [f"Score{i}" for i in range(1, 31)])
-            # insert_into_table(data_roc, f"{TABLE}/{IDENTIFIER}_AUROC.xlsx", column_names)
-            # insert_into_table(data_pr, f"{TABLE}/{IDENTIFIER}_AUPR.xlsx", column_names)
+            # model metrics
+            Accuracy_score, Recall, F1_score, Precision_score = model_metrics(y_test, y_pred)
+            y_probs = best_model.predict_proba(X_test)[:, 1]
+            AUROC = roc_auc_score(y_test, y_probs)
+            AUPR = average_precision_score(y_test, y_probs)
+            data = [organism, 3, 3, concentration, AUROC, AUPR, Accuracy_score, Recall, F1_score, Precision_score]
+            column_names = ["target", "number_of_pictures", "diameter", "concentration", "AUROC", "AUPR",
+                            "Accuracy_score", "Recall", "F1_score", "Precision_score"]
+            insert_into_table(data, f"{TABLE}/{IDENTIFIER}_AUROC_AUPR.xlsx", column_names)
+
+            # accuracy of cross validation
+            cv = StratifiedKFold(n_splits=30)
+            scores = cross_val_score(best_model, X_test, y_test, scoring='accuracy', n_jobs=-1, cv=cv,
+                                     error_score='raise')
+            data = [3, 3, concentration, Accuracy_score, Recall, F1_score, Precision_score] + list(scores)
+            insert_into_table(data, f"{TABLE}/{IDENTIFIER}_{organism}_Accuracy.xlsx")
+
+            # AUROC and AUPR of cross validation
+            cv = StratifiedKFold(n_splits=30)
+            auroc = list(cross_val_score(best_model, X_test, y_test, scoring='roc_auc', n_jobs=-1, cv=cv))
+            aupr = list(cross_val_score(best_model, X_test, y_test, scoring='average_precision', n_jobs=-1, cv=cv))
+            data_roc = [organism, 3, 3, concentration] + auroc
+            data_pr = [organism, 3, 3, concentration] + aupr
+            column_names = (["target", "number_of_pictures", "diameter", "concentration"] +
+                            [f"Score{i}" for i in range(1, 31)])
+            insert_into_table(data_roc, f"{TABLE}/{IDENTIFIER}_AUROC.xlsx", column_names)
+            insert_into_table(data_pr, f"{TABLE}/{IDENTIFIER}_AUPR.xlsx", column_names)
