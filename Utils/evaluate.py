@@ -1,5 +1,4 @@
 from sklearn.metrics import accuracy_score, recall_score, f1_score, precision_score
-from sklearn.model_selection import cross_val_score
 
 
 def model_metrics(y_test, y_pred):
